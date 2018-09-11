@@ -1,0 +1,76 @@
+
+
+
+
+
+<ion-content padding id="regis">
+  <h1>Create Your account!</h1>
+
+  <div>
+    <form [formGroup]="form" (ngSubmit)="saveEntry()">
+
+     <ion-list>
+  <ion-item>
+    <ion-label floating>Fullname</ion-label>
+      <ion-input
+           formControlName="username" 
+           [(ngModel)]="technologyusername" 
+            type="text" >
+      </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input 
+             formControlName="email" 
+             [(ngModel)]="technologyemail"
+             type="text" >
+    </ion-input>
+  </ion-item>
+  
+  
+
+    </ion-list>
+  </form>
+</div>
+
+<button ion-button block (click)="saveEntry()" [disabled]="!form.valid" >Submit</button>
+<button ion-button block (click)="home()" >back to login</button>
+<!----
+<ion-list padding id="test">
+
+  <ion-item>s
+    
+    <ion-input type="text" placeholder="Email" [(ngModel)]="userData.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    
+    <ion-input type="text"  placeholder="Username"[(ngModel)]="userData.username"></ion-input>
+  </ion-item>
+
+ <ion-item>
+    
+    <ion-input type="text" placeholder="License" [(ngModel)]="userData.license"></ion-input>
+  </ion-item>
+
+  <ion-item>
+
+    <ion-input type="text" placeholder="Tel." [(ngModel)]="userData.tel"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    
+    <ion-input type="text" placeholder="Password" [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+
+
+<button ion-button block (click)="register()" >CREATE ACCOUNT</button>
+<button ion-button block (click)="home()" >BACK TO LOGIN</button>
+
+</ion-list>
+
+
+
+</ion-content>
+-->
