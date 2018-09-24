@@ -2,8 +2,12 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomePage } from '../pages/home/home';
+
 import { RegisterPage } from '../pages/register/register';
+import { MainPage } from '../pages/main/main';
+import { QueuePage } from '../pages/queue/queue';
+import { HistoryPage } from '../pages/history/history';
+
 
 
 
@@ -11,7 +15,7 @@ import { RegisterPage } from '../pages/register/register';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = MainPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

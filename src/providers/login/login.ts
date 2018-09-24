@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http , Headers , RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
 
-let apiUrl = "http://localhost/PHP-Slim-Restful-master/api/";
+
+let apiUrl = "http://localhost/PHP-Slim-Restful/api/";
 /*
   Generated class for the LoginProvider provider.
 

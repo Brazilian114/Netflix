@@ -1,57 +1,45 @@
+<ion-header>
 
-
-
-
-
-<ion-content padding id="regis">
+    <ion-navbar color="danger">
+      <ion-title>เพิ่มเส้นทาง</ion-title>
+    </ion-navbar>
   
-  <h1>Create Your account!</h1>
-
-  <div>
-    <form [formGroup]="form" (ngSubmit)="saveEntry()">
-
-     <ion-list>
-  <ion-item>
-    <ion-label floating>Fullname</ion-label>
-      <ion-input
-           formControlName="username" 
-           [(ngModel)]="technologyusername" 
-            type="text" >
-      </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Email</ion-label>
-    <ion-input 
-             formControlName="email" 
-             [(ngModel)]="technologyemail"
-             type="text" >
-    </ion-input>
-  </ion-item>
-  <ion-item>
-      <ion-label floating>tel</ion-label>
-      <ion-input 
-               formControlName="tel" 
-               [(ngModel)]="technologytel"
-               type="text" >
-      </ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>license</ion-label>
-        <ion-input 
-                 formControlName="license" 
-                 [(ngModel)]="technologylicense"
-                 type="text" >
-        </ion-input>
-      </ion-item>
+  </ion-header>
+  
+  
+  <ion-content class="outer-content" padding id="detail">
+  
+  
+   
       
-      
-     
-
+  
+    
+      <ion-list no-lines>
+       <!--  <ion-item>
+             
+         <input placeholder="search for location"  [(ngModel)]="userPostData.startt"autocorrect="off" autocapitalize="off" spellcheck="off" 
+          type="text" class="form-control" #search [formControl]="searchControl"(click)="map()">
+        </ion-item>--> 
       <ion-item>
+            <ion-label> <ion-icon name="person"></ion-icon></ion-label>
+          <ion-input 
+                      
+                      
+                      placeholder="ชื่อ-นามสกุล"
+                      type="text"></ion-input>
+     </ion-item>
+        <ion-item>
+            <ion-label> <ion-icon name="card"></ion-icon></ion-label>
+          <ion-input 
+                     
+                    
+                     placeholder="หมายเลขทะเบียนรถ"></ion-input>
+        </ion-item>
+        
+        <ion-item >
         <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
-        <ion-select formControlName="province" multiple="true"
-        [(ngModel)]="technologyprovince" submitText="Okay" cancelText="Cancle">
+        <ion-select 
+         submitText="Okay" cancelText="Cancle">
           <ion-option value="กรุงเทพมหานคร">กรุงเทพมหานคร</ion-option>
           <ion-option value="กระบี่">กระบี่</ion-option>
           <ion-option value="กาญจนบุรี">กาญจนบุรี</ion-option>
@@ -132,75 +120,53 @@
           
           
         </ion-select>
-      </ion-item>
-
-      <ion-item>
-          <ion-label floating>password</ion-label>
-          <ion-input 
-                   formControlName="password" 
-                   [(ngModel)]="technologypassword"
-                   type="password" >
-          </ion-input>
         </ion-item>
-  
+
+        <ion-item>
+
+            <ion-label> <ion-icon name="call"></ion-icon></ion-label>
+          <ion-input 
+                     
+                    
+                     placeholder="เบอร์โทร"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>เลือกการบริการ</ion-label>
+            <ion-select  multiple="true"
+            submitText="Okay" cancelText="Cancle">
+              <ion-option value="ล้างอัดฉีด">ล้างอัดฉีด</ion-option>
+              <ion-option value="ล้างห้องเครื่อง">ล้างห้องเครื่อง</ion-option>
+              <ion-option value="ดูดฝุ่นภายใน">ดูดฝุ่นภายใน</ion-option>
+              <ion-option value="เคลือบยาง">เคลือบยาง</ion-option>
+              
+                       
+            </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-label>เลือกช่วงเวลา</ion-label>
+              <ion-select  
+              submitText="Okay" cancelText="Cancle">
+                <ion-option value="08.00.00">08.00.00</ion-option>
+                <ion-option value="09.00.00">09.00.00</ion-option>
+                <ion-option value="09.00.00">09.00.00</ion-option>
+                <ion-option value="11.00.00">11.00.00"</ion-option>
+                <ion-option value="12.00.00">12.00.00</ion-option>
+                <ion-option value="13.00.00">13.00.00</ion-option>
+                <ion-option value="14.00.00">14.00.00</ion-option>
+                <ion-option value="15.00.00">15.00.00</ion-option>
+                <ion-option value="16.00.00">16.00.00</ion-option>
+                <ion-option value="17.00.00">17.00.00</ion-option>
+                <ion-option value="18.00.00">18.00.00</ion-option>
+                <ion-option value="19.00.00">19.00.00</ion-option>
+                
+                         
+              </ion-select>
+            </ion-item>
         
-          
-          <ion-input padding id="home"
-                   formControlName="status" 
-                   [(ngModel)]="status"
-                   
-                   value="w" >
-          </ion-input>
+        
+      </ion-list>        
        
-
-    </ion-list>
-  </form>
-</div>
-<br>
-<br>
-<button   ion-button block (click)="saveEntry()">Submit</button>
-<button ion-button block (click)="home()" >back to login</button>
-
-
-
-
-<!----
-
-
-<ion-list padding id="test">
-
-  <ion-item>s
+      <button ion-button block>ยืนยัน</button>
     
-    <ion-input type="text" placeholder="Email" [(ngModel)]="userData.email"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    
-    <ion-input type="text"  placeholder="Username"[(ngModel)]="userData.username"></ion-input>
-  </ion-item>
-
- <ion-item>
-    
-    <ion-input type="text" placeholder="License" [(ngModel)]="userData.license"></ion-input>
-  </ion-item>
-
-  <ion-item>
-
-    <ion-input type="text" placeholder="Tel." [(ngModel)]="userData.tel"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    
-    <ion-input type="text" placeholder="Password" [(ngModel)]="userData.password"></ion-input>
-  </ion-item>
-
-
-<button ion-button block (click)="register()" >CREATE ACCOUNT</button>
-<button ion-button block (click)="home()" >BACK TO LOGIN</button>
-
-</ion-list>
-
--->
-
-</ion-content>
-
+    </ion-content>

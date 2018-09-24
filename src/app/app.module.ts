@@ -7,6 +7,9 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
+import { MainPage } from '../pages/main/main';
+import { QueuePage } from '../pages/queue/queue';
+import { HistoryPage } from '../pages/history/history';
 import { LoginProvider } from '../providers/login/login';
 import { ServiceProvider } from '../providers/service/service';
 import { CommonProvider } from '../providers/common/common';
@@ -16,7 +19,10 @@ import { CommonProvider } from '../providers/common/common';
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    MainPage,
+    QueuePage,
+    HistoryPage
     
   ],
   imports: [
@@ -27,7 +33,10 @@ import { CommonProvider } from '../providers/common/common';
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    MainPage,
+    QueuePage,
+    HistoryPage
     
   ],
   providers: [

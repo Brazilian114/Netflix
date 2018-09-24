@@ -19,14 +19,12 @@ import { Http,Headers, RequestOptions } from '@angular/http';
 })
 export class RegisterPage {
 
-  resposeData : any;
-  userData = {"username":"","password":"","email":"","license":"","tel":""};
 
-  
+  waiting: string = "w";
+ 
   
   public form                   : FormGroup;
-  public technologyusername       : any;
-  public technologyemail        : any;
+
   
   // Flag to be used for checking whether we are adding/editing an entry
   public isEdited               : boolean = false;
@@ -51,7 +49,17 @@ export class RegisterPage {
 
                 this.form = fb.group({
                   "username"                  : ["", Validators.required],
-                  "email"                 : ["", Validators.required],
+                  "email"                     : ["", Validators.required],
+                  "tel"                       : ["", Validators.required],
+                  "license"                   : ["", Validators.required],
+                  "province"                  : ["", Validators.required],
+                  "password"                  : ["", Validators.required],
+                  "status"                    : ["", Validators.required],
+                  
+                  
+                  
+                  
+                  
                   
                });
                 
@@ -62,8 +70,7 @@ export class RegisterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
-
-
+ /*
   register(){
 
     this.auth.postData(this.userData, "signup").then((result) =>{
@@ -101,30 +108,17 @@ export class RegisterPage {
 
 
   }
-
+*/
     
   home(){
     this.navCtrl.push(HomePage);
   }
 
-  load()
-  {
-     this.http.get('http://localhost/DB/retrieve-data.php')
-     .map(res => res.json())
-     .subscribe(data => 
-     {
-        this.items = data;         
-     });
-  }
-8
+ 
+
   // Assign the navigation retrieved data to properties
   // used as models on the page's HTML form
-  selectEntry(item)
-  {
-     this.technologyusername       = item.username;
-     this.technologyemail       = item.email;
-     this.recordID              = item.id;
-  }
+
 
 
 
@@ -133,9 +127,10 @@ export class RegisterPage {
   // to our remote PHP script (note the body variable we have created which 
   // supplies a variable of key with a value of create followed by the key/value pairs
   // for the record data
-  createEntry(username, email)
+  createEntry(username, email ,tel ,license ,password, province,status)
   {
-     let body     : string   = "key=create&username=" + username + "&email=" + email ,
+     let body     : string   = "key=create&username=" + username + "&email=" + email+ "&tel=" +
+                                tel+ "&license=" + license + "&province=" + province + "&password=" + password + "&status=" + status ,
          type     : string   = "application/x-www-form-urlencoded; charset=UTF-8",
          headers  : any      = new Headers({ 'Content-Type': type}),
          options  : any      = new RequestOptions({ headers: headers }),
@@ -165,30 +160,7 @@ export class RegisterPage {
   // to our remote PHP script (note the body variable we have created which 
   // supplies a variable of key with a value of update followed by the key/value pairs
   // for the record data
-  updateEntry(username, email)
-  {
-     let body       : string = "key=update&username=" + username + "&email=" + email  + "&recordID=" + this.recordID,
-         type       : string = "application/x-www-form-urlencoded; charset=UTF-8",
-         headers    : any     = new Headers({ 'Content-Type': type}),
-         options    : any     = new RequestOptions({ headers: headers }),
-         url        : any     = this.baseURI + "manage-data.php";
-
-     this.http.post(url, body, options)
-     .subscribe(data =>
-     {
-        // If the request was successful notify the user
-        if(data.status === 200)
-        {
-           this.hideForm  =  true;
-           this.sendNotification(`Congratulations the technology: ${username} was successfully updated`);
-        }
-        // Otherwise let 'em know anyway
-        else
-        {
-           this.sendNotification('Something went wrong!');
-        }
-     });
-  }
+ 
 
 
 
@@ -197,31 +169,7 @@ export class RegisterPage {
   // to our remote PHP script (note the body variable we have created which 
   // supplies a variable of key with a value of delete followed by the key/value pairs
   // for the record ID we want to remove from the remote database
-  deleteEntry()
-  {
-     let username       : string = this.form.controls["username"].value,
-         body       : string    = "key=delete&recordID=" + this.recordID,
-         type       : string = "application/x-www-form-urlencoded; charset=UTF-8",
-         headers    : any    = new Headers({ 'Content-Type': type}),
-         options    : any    = new RequestOptions({ headers: headers }),
-         url        : any    = this.baseURI + "manage-data.php";
-
-     this.http.post(url, body, options)
-     .subscribe(data =>
-     {
-        // If the request was successful notify the user
-        if(data.status === 200)
-        {
-           this.hideForm     = true;
-           this.sendNotification(`Congratulations the technology: ${username} was successfully deleted`);
-        }
-        // Otherwise let 'em know anyway
-        else
-        {
-           this.sendNotification('Something went wrong!');
-        }
-     });
-  }
+  
 
 
 
@@ -231,27 +179,29 @@ export class RegisterPage {
   saveEntry()
   {
      let username          : string = this.form.controls["username"].value,
-         email   : string    = this.form.controls["email"].value;
+         email             : string = this.form.controls["email"].value,
+         tel               : string = this.form.controls["tel"].value,
+         license           : string = this.form.controls["license"].value,
+         province          : string = this.form.controls["province"].value,
+         status          : string = this.form.controls["status"].value,
+         password          : string = this.form.controls["password"].value;
+         
+         
+         
          
      if(this.isEdited)
      {
-        this.updateEntry(username, email);
+      
      }
      else
      {
-        this.createEntry(username, email);
+       this.createEntry(username, email ,tel ,license ,password,province,status);
      }
   }
 
 
 
   // Clear values in the page's HTML form fields
-  resetFields() : void
-  {
-     this.technologyusername   = "";
-     this.technologyemail  = ""; 
-    
-  }
 
 
 
@@ -259,11 +209,13 @@ export class RegisterPage {
   // of remote operations
   sendNotification(message)  : void
   {
-     let notification = this.toastCtrl.create({
-         message       : message,
-         duration      : 3000
-     });
-     notification.present();
+    let alert = this.alert.create({
+      title: 'ยินดีต้อนรับ',
+      subTitle: 'คุณได้ทำการลงทะเบียนเรียบร้อย',
+      buttons: ['OK']
+      
+  });
+  alert.present();
+  
   }
-
 }
