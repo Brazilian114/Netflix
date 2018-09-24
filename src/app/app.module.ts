@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { MainPage } from '../pages/main/main';
 import { QueuePage } from '../pages/queue/queue';
+import { ProfilePage } from '../pages/profile/profile';
 import { HistoryPage } from '../pages/history/history';
 import { LoginProvider } from '../providers/login/login';
 import { ServiceProvider } from '../providers/service/service';
@@ -22,7 +23,8 @@ import { CommonProvider } from '../providers/common/common';
     RegisterPage,
     MainPage,
     QueuePage,
-    HistoryPage
+    HistoryPage,
+    ProfilePage
     
   ],
   imports: [
@@ -36,7 +38,8 @@ import { CommonProvider } from '../providers/common/common';
     RegisterPage,
     MainPage,
     QueuePage,
-    HistoryPage
+    HistoryPage,
+    ProfilePage
     
   ],
   providers: [

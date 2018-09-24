@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,App  } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { QueuePage } from '../queue/queue';
 import { HistoryPage } from '../history/history';
+import { ProfilePage } from '../profile/profile';
 /**
  * Generated class for the MainPage page.
  *
@@ -28,8 +29,13 @@ export class MainPage {
             
            
  }
-historyPage(){
+  historyPage(){
   this.navCtrl.push(HistoryPage);
+          
+         
+}
+  profilePage(){
+  this.navCtrl.push(ProfilePage);
           
          
 }

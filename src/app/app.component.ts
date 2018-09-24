@@ -7,6 +7,7 @@ import { RegisterPage } from '../pages/register/register';
 import { MainPage } from '../pages/main/main';
 import { QueuePage } from '../pages/queue/queue';
 import { HistoryPage } from '../pages/history/history';
+import { ProfilePage } from '../pages/profile/profile';
 
 
 
