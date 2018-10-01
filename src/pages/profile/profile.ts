@@ -7,7 +7,7 @@ import { Http,Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map'; 
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HomePage } from '../home/home';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 /**
  * Generated class for the ContentPage page.
  *
@@ -22,19 +22,20 @@ import { HomePage } from '../home/home';
 })
 export class ProfilePage {
 
-  public userDetails : any;
   posts: any;
+  public items : any = [];
+  public userDetails : any;
+
+  userPostData = {"user_id":"","token":"","username":"","tel":"","email":"",
+  "license":"","province": ""};
+  public resposeData : any;
   public form                   : FormGroup;
-  public technologystartt           : any;
-  public technologyendd              : any;
-  public technologydated             : any;
-  public technologytimed             : any;
-  public technologysit              : any;
-  public technologybrand            : any;
-  public technologycolor            : any;
-  public technologytel              : any;
-  public technologyname             : any;
+  public technologyemail         : any;
+  public technologyusername             : any;
   public technologylicense            : any;
+  public technologyprovince            : any;
+  public technologytel             : any;
+
   
   // Flag to be used for checking whether we are adding/editing an entry
   public isEdited               : boolean = false;
@@ -44,9 +45,9 @@ export class ProfilePage {
   public pageTitle              : string;
   // Property to store the recordID for when an existing entry is being edited
   public recordID               : any      = null;
-  private baseURI               : string  = "http://localhost/DB/";
+  private baseURI               : string  = "http://localhost/DB123/";
    
-  public items : any = [];
+ 
     constructor( //public angularfire :AngularFireDatabase,
                  public alertCtrl   :AlertController,
                  public http        :Http,
@@ -56,22 +57,18 @@ export class ProfilePage {
                  public loginCtrl   :LoginProvider,
                  public fb          :FormBuilder,
                  public toastCtrl   :ToastController,
-                 public app : App)
+                 public auth : LoginProvider)
                   {
   
                     const data = JSON.parse(localStorage.getItem('userData'));
                     this.userDetails = data.userData; 
                       this.form = fb.group({
-                        "startt"                  : ["", Validators.required],
-                        "endd"                    : ["", Validators.required],
-                        "dated"                   : ["", Validators.required],
-                        "timed"                   : ["", Validators.required],
-                        "sit"                    : ["", Validators.required],
-                        "brand"                  : ["", Validators.required],
-                        "color"                  : ["", Validators.required],
-                        "tel"                    : ["", Validators.required],
-                        "name"                    : ["", Validators.required],
-                        "license"                    : ["", Validators.required]
+                        "email"                  : ["", Validators.required],
+                        "username"               : ["", Validators.required],
+                        "license"                : ["", Validators.required],
+                        "province"               : ["", Validators.required],
+                        "tel"                    : ["", Validators.required]
+                        
                       });
     }
   
@@ -79,7 +76,7 @@ export class ProfilePage {
     {
         this.initializeItems();
     
-        this.http.get('http://localhost/DB/retrieve-data.php').map(res => res.json()).subscribe(data => {
+        this.http.get('http://localhost/DB123/retrieve-data.2.php').map(res => res.json()).subscribe(data => {
           this.posts = data;
          // console.log(this.posts);
     
@@ -102,7 +99,7 @@ export class ProfilePage {
   
     load()
     {
-       this.http.get('http://localhost/DB/retrieve-data.php')
+       this.http.get('http://localhost/DB123/retrieve-data.2.php')
        .map(res => res.json())
        .subscribe(data => 
        {
@@ -114,16 +111,12 @@ export class ProfilePage {
     // used as models on the page's HTML form
     selectEntry(item)
     {
-      this.technologystartt       = item.startt;
-      this.technologyendd         = item.endd;
-      this.technologydated         = item.dated;
-      this.technologytimed         = item.timed;
-      this.technologysit          = item.sit;
-      this.technologybrand        = item.brand;
-      this.technologycolor        = item.color;
+      this.technologyemail        = item.email;
+      this.technologyusername     = item.username;
+      this.technologylicense      = item.license;
+      this.technologyprovince     = item.province;
       this.technologytel          = item.tel;
-      this.technologyname          = item.name;
-      this.technologylicense         = item.license;
+     
       this.recordID               = item.id;
     }
   
@@ -134,11 +127,10 @@ export class ProfilePage {
     // to our remote PHP script (note the body variable we have created which 
     // supplies a variable of key with a value of create followed by the key/value pairs
     // for the record data
-    createEntry(startt, endd, dated, timed, sit, brand, color, tel, license)
+    createEntry(email, username, license, province, tel,)
     {
-       let body     : string   = "key=create&startt=" + startt + "&endd=" + endd + "&dated=" +
-       dated + "&timed=" + timed + "&sit=" + sit +"&license=" + license +
-        "&brand=" + brand + "&color=" + color + "&tel=" + tel,
+       let body     : string   = "key=create&email=" + email + "&username=" + username + "&province=" +
+       province + "&tel=" + tel+ "&license=" + license ,
            type     : string   = "application/x-www-form-urlencoded; charset=UTF-8",
            headers  : any      = new Headers({ 'Content-Type': type}),
            options  : any      = new RequestOptions({ headers: headers }),
@@ -168,31 +160,24 @@ export class ProfilePage {
     // to our remote PHP script (note the body variable we have created which 
     // supplies a variable of key with a value of update followed by the key/value pairs
     // for the record data
-    updateEntry(startt, endd, dated, timed, sit, brand, color, tel, license)
+    updateEntry(email : string, username : string, license : string, province : string, tel : string) : void
     {
-       let body       : string = "key=updated&startt=" + startt + "&endd=" + endd + "&dated=" +
-                                 dated + "&timed=" + timed + "&sit=" + sit + "&license=" + license +
-                                 "&brand=" + brand + "&color=" + color + "&tel=" +
-                                 tel  + "&recordID=" + this.recordID,
-           type       : string = "application/x-www-form-urlencoded; charset=UTF-8",
-           headers    : any     = new Headers({ 'Content-Type': type}),
-           options    : any     = new RequestOptions({ headers: headers }),
-           url        : any     = this.baseURI + "manage-data.php";
-  
-       this.http.post(url, body, options)
+       let headers 	: any		= new http ({ 'Content-Type': 'application/json' }),
+           options 	: any		= { "key" : "update", "email" : email, "username" : username, 
+           "license" : license, "province" : province, "tel" : tel, "recordID" : this.recordID},
+           url       : any      	= this.baseURI + "manage-data.php";
+ 
+       this.http
+       .post(url, JSON.stringify(options), headers)
        .subscribe(data =>
        {
           // If the request was successful notify the user
-          if(data.status === 200)
-          {
-             this.hideForm  =  true;
-             this.sendNotification(`คุณได้ทำการขอร่วมทางเรียบร้อยแล้ว`);
-          }
-          // Otherwise let 'em know anyway
-          else
-          {
-             this.sendNotification('Something went wrong!');
-          }
+          this.hideForm  =  true;
+          this.sendNotification(`Congratulations the technology: ${name} was successfully updated`);
+       },
+       (error : any) =>
+       {
+          this.sendNotification('Something went wrong!');
        });
     }
   
@@ -205,7 +190,7 @@ export class ProfilePage {
     // to our remote PHP script (note the body variable we have created which 
     // supplies a variable of key with a value of delete followed by the key/value pairs
     // for the record ID we want to remove from the remote database
-    deleteEntry()
+    /*deleteEntry()
     {
        let name       : string = this.form.controls["startt"].value,
            body       : string    = "key=delete&recordID=" + this.recordID,
@@ -231,31 +216,27 @@ export class ProfilePage {
        });
     }
   
-  
+  */
   
     // Handle data submitted from the page's HTML form
     // Determine whether we are adding a new record or amending an
     // existing record
     saveEntry()
     {
-       let startt          : string    = this.form.controls["startt"].value,
-       endd            : string    = this.form.controls["endd"].value,
-       dated           : string    = this.form.controls["dated"].value,
-       timed           : string    = this.form.controls["timed"].value,
-       sit            : string    = this.form.controls["sit"].value,
-       brand          : string    = this.form.controls["brand"].value,
-       color          : string    = this.form.controls["color"].value,
-       tel            : string    = this.form.controls["tel"].value,
-       license            : string    = this.form.controls["license"].value,
-       name            : string    = this.form.controls["name"].value;
+       let email          : string    = this.form.controls["email"].value,
+           username       : string    = this.form.controls["username"].value,
+           license        : string    = this.form.controls["license"].value,
+           province       : string    = this.form.controls["province"].value,
+           tel            : string    = this.form.controls["tel"].value
+           
   
        if(this.isEdited)
        {
-          this.updateEntry(startt, endd, dated, timed, sit, brand, color, tel, license);
+          this.updateEntry(email, username, license, province, tel);
        }
        else
        {
-          this.createEntry(startt, endd, dated, timed, sit, brand, color, tel, license);
+        this.createEntry(email, username, license, province, tel);
        }
     }
   
@@ -264,17 +245,13 @@ export class ProfilePage {
     // Clear values in the page's HTML form fields
     resetFields() : void
     {
-      this.technologystartt  = "";
-      this.technologyendd  = ""; 
-      this.technologydated = ""; 
-      this.technologytimed  = ""; 
-      this.technologysit  = ""; 
-      this.technologybrand  = ""; 
-      this.technologycolor  = ""; 
-      this.technologytel  = ""; 
-      this.technologyname  = ""; 
-      this.technologylicense = ""; 
-      
+     
+      this.technologyemail        = "";
+      this.technologyusername     = "";
+      this.technologylicense      = "";
+      this.technologyprovince     = "";
+      this.technologytel          = "";
+
     }
   
   
@@ -295,7 +272,39 @@ export class ProfilePage {
             
            
   }
+  profileUpdate() {
+    if (this.userPostData.username,this.userPostData.email,this.userPostData.license,
+      this.userPostData.province,this.userPostData.tel
+      ) {
+      //this.common.presentLoading();
+      this.auth.postData(this.userPostData, "profileUpdate")
+        .then((result) => {
+          this.resposeData = result;
+          if (this.resposeData.feedData) {
+           // this.common.closeLoading();
+            //this.dataSet.unshift(this.resposeData.feedData);
+            this.userPostData.username = "";
+            this.userPostData.license = "";
+            this.userPostData.province = "";
+            this.userPostData.email = "";
+            this.userPostData.tel = "";
+            
+            const toast = this.toastCtrl.create({
+              message: 'Your files were successfully saved',
+              showCloseButton: true,
+              closeButtonText: 'Ok'
+            });
+            toast.present();
+          } else {
+            console.log("No access");
+          }
   
+        }, (err) => {
+          //Connection failed message
+        });
+    }
+  
+  }
   }
   
   

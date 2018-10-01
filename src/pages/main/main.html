@@ -20,6 +20,18 @@
   <ion-label fixed>Username</ion-label>
   <ion-input type="text" value="{{userDetails.username}}"></ion-input>
 </ion-item>
+<ion-item>
+  <ion-label fixed>Username</ion-label>
+  <ion-input type="text" value="{{userDetails.email}}"></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label fixed>Username</ion-label>
+    <ion-input type="text" value="{{userDetails.tel}}"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label fixed>Username</ion-label>
+      <ion-input type="text" value="{{userDetails.license}}"></ion-input>
+    </ion-item>
 
   <ion-grid class="mygrid">
       <ion-row>
@@ -52,6 +64,31 @@
     
     
   </ion-grid>
+
+  <div padding id="list">
+    <ion-row style="margin-top:10%;">
+        <ion-col col-6 *ngFor="let item of items">
+              
+            <ion-item no-line (click)="viewEntry({ record: item })">
+
+                <img src="../assets/img/user.png"  >
+                
+                
+                
+                  
+                
+                <p><ion-icon name="pin" item-start></ion-icon>{{ item.username }}</p>
+                
+                
+                <p><ion-icon name="flag" item-start></ion-icon>{{ item.email }}</p>
+                <p><ion-icon name="calendar" item-start></ion-icon>{{ item.license }}</p>
+                <p><ion-icon name="clock" item-start></ion-icon>{{ item.tel }} น.</p>
+            </ion-item>
+        </ion-col>
+      
+    </ion-row>
+</div>
+
 
 </ion-content>
 

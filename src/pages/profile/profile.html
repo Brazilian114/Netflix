@@ -13,25 +13,24 @@
   </ion-header>
   
   
-  <ion-content class="outer-content" padding id="detail">
-  
+ 
   
    
-      
+      <!----
   
     
       <ion-list no-lines>
-       <!--  <ion-item>
+         <ion-item>
              
          <input placeholder="search for location"  [(ngModel)]="userPostData.startt"autocorrect="off" autocapitalize="off" spellcheck="off" 
           type="text" class="form-control" #search [formControl]="searchControl"(click)="map()">
-        </ion-item>--> 
+        </ion-item>
 
         <ion-item>
             <ion-label> <ion-icon name="mail"></ion-icon></ion-label>
           <ion-input 
                       
-                      value="{{userDetails.email}}"
+                      [(ngModel)]="userPostData.email"
                       placeholder="อีเมล์"
                       type="text"></ion-input>
      </ion-item>
@@ -40,7 +39,7 @@
             <ion-label> <ion-icon name="person"></ion-icon></ion-label>
           <ion-input 
                       
-                      value="{{userDetails.username}}"
+                      [(ngModel)]="userPostData.username"
                       placeholder="ชื่อ-นามสกุล"
                       type="text"></ion-input>
      </ion-item>
@@ -48,7 +47,7 @@
             <ion-label> <ion-icon name="card"></ion-icon></ion-label>
           <ion-input 
                      
-                     value="{{userDetails.license}}"
+          [(ngModel)]="userPostData.license"
                      placeholder="หมายเลขทะเบียนรถ"></ion-input>
         </ion-item>
         
@@ -143,17 +142,101 @@
 
             <ion-label> <ion-icon name="call"></ion-icon></ion-label>
           <ion-input 
+                     [(ngModel)]="userPostData.tel"
                      
-                     value="{{userDetails.tel}}"
                      placeholder="เบอร์โทร"></ion-input>
         </ion-item>
 
        
       
-         <button ion-button block (click)="homePage()">ออกจากระบบ</button>
+         <button ion-button block (click)="profileUpdate()">ออกจากระบบ</button>
         
       </ion-list>        
        
-     
+    -->
+    <ion-content class="outer-content" padding id="detail">
+
+    <form [formGroup]="form" (ngSubmit)="saveEntry()">
+      <ion-list no-lines>
+       
+            <ion-item>
+                  <ion-label> <ion-icon name="pin"></ion-icon></ion-label>
+                <ion-input 
+                            formControlName="email" 
+                            [(ngModel)]="technologyemail" 
+                            placeholder="ต้นทาง"
+                            type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label> <ion-icon name="flag"></ion-icon></ion-label>
+                <ion-input 
+                           formControlName="username" 
+                           [(ngModel)]="technologyusername" 
+                           placeholder="ปลายทาง"
+                           type="text"></ion-input>
+              </ion-item>
+              
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+              <ion-item>
+                <ion-label><ion-icon name="calendar"></ion-icon></ion-label>
+                <ion-input placeholder="วันที่"
+                              formControlName="license" 
+                              [(ngModel)]="technologylicense"
+                             
+                              type="text"
+                              
+                             ></ion-input>
+              </ion-item>
+            </ion-col>
+            
+                <ion-col>
+          
+              <ion-item>
+                <ion-label><ion-icon name="clock"></ion-icon></ion-label>
+                <ion-input formControlName="province" 
+                               placeholder="เวลา"
+                             [(ngModel)]="technologyprovince"
+                               
+                              type="text"
+                             ></ion-input>
+              </ion-item>
+            
+          </ion-col>
+      </ion-row>
+              </ion-grid>
+      
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+              <ion-item>
+                <ion-label><ion-icon name="people"></ion-icon></ion-label>
+                <ion-input placeholder="จำนวนที่นั่ง"
+                            formControlName="tel" 
+                            [(ngModel)]="technologytel"
+                            type="number" text-right></ion-input>
+              </ion-item>
+            </ion-col>
+                  </ion-row>
+              </ion-grid>
+            
+              
+               
+               
+            </ion-list>
+             
+                  <button
+                     ion-button
+                     
+                     text-center
+                     block
+                     >ขอร่วมเดินทาง</button>
+               
+  </form>
     
     </ion-content>
+    
+   
+   
+   
