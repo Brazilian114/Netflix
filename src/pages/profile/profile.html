@@ -31,7 +31,7 @@
             <ion-label> <ion-icon name="mail"></ion-icon></ion-label>
           <ion-input 
                       
-                      
+                      value="{{userDetails.email}}"
                       placeholder="อีเมล์"
                       type="text"></ion-input>
      </ion-item>
@@ -40,7 +40,7 @@
             <ion-label> <ion-icon name="person"></ion-icon></ion-label>
           <ion-input 
                       
-                      
+                      value="{{userDetails.username}}"
                       placeholder="ชื่อ-นามสกุล"
                       type="text"></ion-input>
      </ion-item>
@@ -48,7 +48,7 @@
             <ion-label> <ion-icon name="card"></ion-icon></ion-label>
           <ion-input 
                      
-                    
+                     value="{{userDetails.license}}"
                      placeholder="หมายเลขทะเบียนรถ"></ion-input>
         </ion-item>
         
@@ -56,6 +56,7 @@
         <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
         <ion-select 
          submitText="Okay" cancelText="Cancle">
+         
           <ion-option value="กรุงเทพมหานคร">กรุงเทพมหานคร</ion-option>
           <ion-option value="กระบี่">กระบี่</ion-option>
           <ion-option value="กาญจนบุรี">กาญจนบุรี</ion-option>
@@ -143,13 +144,13 @@
             <ion-label> <ion-icon name="call"></ion-icon></ion-label>
           <ion-input 
                      
-                    
+                     value="{{userDetails.tel}}"
                      placeholder="เบอร์โทร"></ion-input>
         </ion-item>
 
        
       
-         <button ion-button block>ออกจากระบบ</button>
+         <button ion-button block (click)="homePage()">ออกจากระบบ</button>
         
       </ion-list>        
        

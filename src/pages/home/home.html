@@ -1,52 +1,50 @@
 <ion-header>
   
-  </ion-header>
+</ion-header>
+
+<ion-content padding id="home">
+    <h1>
+        CARCARE
+    </h1>
+    <ion-list >
+        
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input  type="text" name="username" [(ngModel)]="userData.username"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input  type="text" name="password"[(ngModel)]="userData.password"></ion-input>
+          </ion-item>
+        
+         
+        </ion-list>
+        
+        
+        <button ion-button block (click)="loginn()">Log in</button>
+        <a>ไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
+      
+    <!--  <ion-list >
+          
+          <ion-item  >
+              <ion-input  round type="text" placeholder="Username" name="username" #username></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" #password></ion-input>
+            </ion-item>
+          
+            
   
-  <ion-content padding id="home">
-      <h1>
-          CARCARE
-      </h1>
-      <ion-list >
-          
-            <ion-item>
-              <ion-label floating>Email</ion-label>
-              <ion-input  type="email" name="username" [(ngModel)]="data.username"></ion-input>
-            </ion-item>
-          
-            <ion-item>
-              <ion-label floating>Password</ion-label>
-              <ion-input  type="password" name="password"[(ngModel)]="data.password"></ion-input>
-            </ion-item>
-          
-            <div item-end>
-               <u end  name="login_user">ลืมรหัสผ่าน </u>
-            </div>
           </ion-list>
           
           
-          <button ion-button block (click)="loginn()">Log in</button>
+          <button ion-button block (click)="sign()">เข้าสุ่ระบบ</button>
           <a>ไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
+     
         
-      <!--  <ion-list >
-            
-            <ion-item  >
-                <ion-input  round type="text" placeholder="Username" name="username" #username></ion-input>
-              </ion-item>
-            
-              <ion-item>
-                <ion-input type="password" placeholder="Password" name="password" #password></ion-input>
-              </ion-item>
-            
-              
-    
-            </ion-list>
-            
-            
-            <button ion-button block (click)="sign()">เข้าสุ่ระบบ</button>
-            <a>ไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
-       
-          
+
+        --> 
   
-          --> 
-    
-  </ion-content>
+</ion-content>

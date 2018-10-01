@@ -18,7 +18,11 @@ import { ProfilePage } from '../profile/profile';
 })
 export class MainPage {
 
+  public userDetails : any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public app : App) {
+                          const data = JSON.parse(localStorage.getItem('userData'));
+                          this.userDetails = data.userData; 
   }
 
   ionViewDidLoad() {

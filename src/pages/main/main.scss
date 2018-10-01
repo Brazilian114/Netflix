@@ -1,17 +1,39 @@
 page-main {
-.button {
-    height: 100px;
-    width: 90%;
-    left: 6%;
-    margin-top: 10%;
-    
-    
+
+
+.mygrid{
+   padding-top: 80%;;
+   padding-right: 5px;
+   padding-bottom: 5px;
+   padding-left: 5px;
     
 }
-
-#grid{
-    margin-top: 70%;
-    
+.div{
+    padding-left: 18px;
+    background:rgb(177, 87, 165);
+    color: white;
+    margin: 2px;
+    border-radius: 6px;
+    height: 110px;
+    width: 150px;
+    margin-left: 5%;
+  
 }
+.icon{
+    font-size: 40px;
+    margin-top: 13px;
+    align-items: center;
 
+}
+.ion-item{
+   padding-top: 50px;
+}
+.button{
+    background-color: rgb(177, 87, 165);
+    height: 70px;
+    border-radius: 6px;
+    width: 96%;
+    margin-left: 3%;
+    font-size: 29px;
+}
 }

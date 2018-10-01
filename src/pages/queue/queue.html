@@ -15,31 +15,39 @@
   
     
       <ion-list no-lines>
-       <!--  <ion-item>
-             
+        <!--<ion-item>
+            
          <input placeholder="search for location"  [(ngModel)]="userPostData.startt"autocorrect="off" autocapitalize="off" spellcheck="off" 
           type="text" class="form-control" #search [formControl]="searchControl"(click)="map()">
-        </ion-item>--> 
-      <ion-item>
-            <ion-label> <ion-icon name="person"></ion-icon></ion-label>
-          <ion-input 
-                      
-                      
-                      placeholder="ชื่อ-นามสกุล"
-                      type="text"></ion-input>
+        </ion-item> -->
+  
+    <ion-item>
+
+            <ion-label> 
+              <ion-icon name="person"></ion-icon>
+            </ion-label>
+            <ion-input   placeholder="ชื่อ-นามสกุล"
+                         
+                         type="text"
+                         [(ngModel)]="userPostData.username"></ion-input>
+                         
      </ion-item>
+
+
         <ion-item>
             <ion-label> <ion-icon name="card"></ion-icon></ion-label>
           <ion-input 
-                     
                     
-                     placeholder="หมายเลขทะเบียนรถ"></ion-input>
+                     placeholder="หมายเลขทะเบียนรถ"
+                     [(ngModel)]="userPostData.license" ></ion-input>
         </ion-item>
         
         <ion-item >
-        <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
+            <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
         <ion-select 
-         submitText="Okay" cancelText="Cancle">
+                    [(ngModel)]="userPostData.province"
+                    submitText="Okay" cancelText="Cancle">
+
           <ion-option value="กรุงเทพมหานคร">กรุงเทพมหานคร</ion-option>
           <ion-option value="กระบี่">กระบี่</ion-option>
           <ion-option value="กาญจนบุรี">กาญจนบุรี</ion-option>
@@ -126,27 +134,26 @@
 
             <ion-label> <ion-icon name="call"></ion-icon></ion-label>
           <ion-input 
-                     
-                    
-                     placeholder="เบอร์โทร"></ion-input>
+                      
+                     placeholder="เบอร์โทร"
+                     [(ngModel)]="userPostData.tel"></ion-input>
         </ion-item>
 
-        <ion-item>
+        <ion-item >
             <ion-label>เลือกการบริการ</ion-label>
-            <ion-select  multiple="true"
-            submitText="Okay" cancelText="Cancle">
-              <ion-option value="ล้างอัดฉีด">ล้างอัดฉีด</ion-option>
-              <ion-option value="ล้างห้องเครื่อง">ล้างห้องเครื่อง</ion-option>
-              <ion-option value="ดูดฝุ่นภายใน">ดูดฝุ่นภายใน</ion-option>
-              <ion-option value="เคลือบยาง">เคลือบยาง</ion-option>
-              
-                       
+            <ion-select  multiple="true" submitText="Okay" cancelText="Cancle"
+                        [(ngModel)]="userPostData.booking_service_id">
+
+               <ion-option *ngFor="let item of items" >{{item.service_name}}</ion-option>
+    
             </ion-select>
           </ion-item>
           <ion-item>
               <ion-label>เลือกช่วงเวลา</ion-label>
               <ion-select  
-              submitText="Okay" cancelText="Cancle">
+                         submitText="Okay" cancelText="Cancle"
+                         [(ngModel)]="userPostData.datetime">
+
                 <ion-option value="08.00.00">08.00.00</ion-option>
                 <ion-option value="09.00.00">09.00.00</ion-option>
                 <ion-option value="09.00.00">09.00.00</ion-option>
@@ -163,10 +170,16 @@
                          
               </ion-select>
             </ion-item>
+
+            <ion-input padding id="home"
+                   [(ngModel)]="userPostData.status"
+                   
+                   value="w" >
+          </ion-input>
         
         
       </ion-list>        
        
-      <button ion-button block>ยืนยัน</button>
+      <button ion-button block (click)="feedUpdate()">ยืนยัน</button>
     
     </ion-content>

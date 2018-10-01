@@ -7,15 +7,13 @@
   
   <h1>Create Your account!</h1>
 
-  <div>
-    <form [formGroup]="form" (ngSubmit)="saveEntry()">
+ 
 
      <ion-list>
   <ion-item>
     <ion-label floating>Fullname</ion-label>
       <ion-input
-           formControlName="username" 
-           [(ngModel)]="technologyusername" 
+           [(ngModel)]="userData.username" 
             type="text" >
       </ion-input>
   </ion-item>
@@ -23,24 +21,21 @@
   <ion-item>
     <ion-label floating>Email</ion-label>
     <ion-input 
-             formControlName="email" 
-             [(ngModel)]="technologyemail"
+             [(ngModel)]="userData.email"
              type="text" >
     </ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>tel</ion-label>
       <ion-input 
-               formControlName="tel" 
-               [(ngModel)]="technologytel"
+               [(ngModel)]="userData.tel"
                type="text" >
       </ion-input>
     </ion-item>
     <ion-item>
         <ion-label floating>license</ion-label>
         <ion-input 
-                 formControlName="license" 
-                 [(ngModel)]="technologylicense"
+                 [(ngModel)]="userData.license"
                  type="text" >
         </ion-input>
       </ion-item>
@@ -50,8 +45,8 @@
 
       <ion-item>
         <ion-label>จังหวัดตามทะเบียนรถ</ion-label>
-        <ion-select formControlName="province" multiple="true"
-        [(ngModel)]="technologyprovince" submitText="Okay" cancelText="Cancle">
+        <ion-select 
+        [(ngModel)]="userData.province" submitText="Okay" cancelText="Cancle">
           <ion-option value="กรุงเทพมหานคร">กรุงเทพมหานคร</ion-option>
           <ion-option value="กระบี่">กระบี่</ion-option>
           <ion-option value="กาญจนบุรี">กาญจนบุรี</ion-option>
@@ -137,28 +132,25 @@
       <ion-item>
           <ion-label floating>password</ion-label>
           <ion-input 
-                   formControlName="password" 
-                   [(ngModel)]="technologypassword"
-                   type="password" >
+                   [(ngModel)]="userData.password"
+                   type="text" >
           </ion-input>
         </ion-item>
   
         
           
-          <ion-input padding id="home"
-                   formControlName="status" 
-                   [(ngModel)]="status"
-                   
+         <!-- <ion-input padding id="home"
+                   [(ngModel)]="userData.status"
                    value="w" >
-          </ion-input>
+          </ion-input>-->
        
 
     </ion-list>
-  </form>
-</div>
+  
+
 <br>
 <br>
-<button   ion-button block (click)="saveEntry()">Submit</button>
+<button   ion-button block (click)="signup()">Submit</button>
 <button ion-button block (click)="home()" >back to login</button>
 
 

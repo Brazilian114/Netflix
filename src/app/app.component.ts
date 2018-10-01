@@ -8,6 +8,7 @@ import { MainPage } from '../pages/main/main';
 import { QueuePage } from '../pages/queue/queue';
 import { HistoryPage } from '../pages/history/history';
 import { ProfilePage } from '../pages/profile/profile';
+import { HomePage } from '../pages/home/home';
 
 
 
@@ -16,7 +17,7 @@ import { ProfilePage } from '../pages/profile/profile';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = MainPage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -27,4 +28,3 @@ export class MyApp {
     });
   }
 }
-
