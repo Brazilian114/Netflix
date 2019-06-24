@@ -3,104 +3,88 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { HttpModule} from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
+
+import { QueuePage } from '../pages/queue/queue';
 import { MainPage } from '../pages/main/main';
-import { MapPage } from '../pages/map/map';
-import { RegisPage } from '../pages/regis/regis';
-import { ListPage } from '../pages/list/list';
-import { AboutPage } from '../pages/about/about';
-import { EditPage } from '../pages/edit/edit';
-import{ AgmCoreModule } from '@agm/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ProfilePage } from '../pages/profile/profile';
-import { SettingPage } from '../pages/setting/setting';
-import { DetailPage } from '../pages/detail/detail';
-import { SearchPage } from '../pages/search/search';
-import { ParallaxDirective} from '../directives/parallax/parallax';
-import { IonicStorageModule } from '@ionic/storage';
-//import{ AngularFireModule } from 'angularfire2';
-//import { AngularFireDatabaseModule} from 'angularfire2/database';
-import { HttpModule } from '@angular/http';
-//import { AngularFireAuthModule } from 'angularfire2/auth';
+//import { ProfilePage } from '../pages/profile/profile';
+import { HistoryPage } from '../pages/history/history';
+import { RegisterPage } from '../pages/register/register';
+import { CanclePage } from '../pages/cancle/cancle';
+import { PopupPage } from '../pages/popup/popup';
+import { ManualPage } from '../pages/manual/manual';
+//import { ContentPage } from '../pages/content/content';
+//import { Popup2Page } from '../pages/popup2/popup2';
+import { MomentModule } from 'angular2-moment';
+import { Http } from '@angular/http';
 import { LoginProvider } from '../providers/login/login';
 import { ServiceProvider } from '../providers/service/service';
 import { CommonProvider } from '../providers/common/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+//import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
+//import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { IonicStorageModule } from '@ionic/storage';
 
 
-
-
-/*var config = {
-  apiKey: "AIzaSyC1fUh2MfJYLuj8mXq9CGNIhqxesKQPdgQ",
-  authDomain: "test-e31c2.firebaseapp.com",
-  databaseURL: "https://test-e31c2.firebaseio.com",
-  projectId: "test-e31c2",
-  storageBucket: "test-e31c2.appspot.com",
-  messagingSenderId: "694663320680"
-};
-*/
 @NgModule({
   declarations: [
+    
     MyApp,
     HomePage,
-    RegisPage, 
-    ProfilePage,
-    SettingPage,
-    DetailPage,
-    SearchPage,
-    ParallaxDirective,
-    ListPage,
     MainPage,
-    AboutPage,
-    EditPage,
-    MapPage
+    RegisterPage,
+    QueuePage,
+    HistoryPage,
+    CanclePage,
+    PopupPage,
+    //Popup2Page
+    //ProfilePage,
+    ManualPage,
+    //ContentPage
     
     
-
-
-
+    
   ],
   imports: [
-    AgmCoreModule.forRoot({
-      libraries: ["places"]
-    }),
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp),
-    //AngularFireDatabaseModule,
-    //AngularFireModule.initializeApp(config),
-    HttpModule,
-    IonicStorageModule.forRoot()
-    //AngularFireAuthModule
+    HttpClientModule,
+    IonicStorageModule,
+    MomentModule,
+    
+  
+    
+    
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    RegisPage, 
-    ProfilePage,
-    SettingPage,
-    DetailPage,
-    SearchPage,
-    ListPage,
     MainPage,
-    AboutPage,
-    EditPage,
-    MapPage
+    RegisterPage,
+    QueuePage,
+    HistoryPage,
+    CanclePage,
+    PopupPage,
+    //Popup2Page
+    //ProfilePage,
+    ManualPage,
+    //ContentPage
     
-
     
   ],
   providers: [
     StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginProvider,
+    SplashScreen,LoginProvider,
     ServiceProvider,
     CommonProvider,
     
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+     
   ]
 })
 export class AppModule {}

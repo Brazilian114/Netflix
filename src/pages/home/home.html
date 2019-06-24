@@ -2,29 +2,30 @@
   
 </ion-header>
 
-<ion-content padding id="home">
-    <h1>
-        CARCARE
-    </h1>
+<ion-content  padding id="home">
+    <b><h1>
+        Carcare
+    </h1></b>
     <ion-list >
         
-          <ion-item>
-            <ion-label floating>Email</ion-label>
-            <ion-input  type="text" name="username" [(ngModel)]="userData.username"></ion-input>
+          <ion-item no-lines>
+           
+            <ion-input  placeholder="อีเมล์" type="text" name="username" [(ngModel)]="userData.username"></ion-input>
           </ion-item>
         
           <ion-item>
-            <ion-label floating>Password</ion-label>
-            <ion-input  type="text" name="password"[(ngModel)]="userData.password"></ion-input>
+            
+            <ion-input   placeholder="รหัสผ่าน "type="password" name="password"[(ngModel)]="userData.password"></ion-input>
           </ion-item>
         
          
         </ion-list>
         
         
-        <button ion-button block (click)="loginn()">Log in</button>
-        <a>ไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
-      
+        <button ion-button block (click)="loginn('top')">เข้าสู่ระบบ</button>
+        <div class="regis">
+        <a>ยังไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
+      </div>
     <!--  <ion-list >
           
           <ion-item  >
@@ -44,7 +45,6 @@
           <a>ไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
      
         
-
         --> 
   
 </ion-content>

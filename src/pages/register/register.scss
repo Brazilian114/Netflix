@@ -1,0 +1,66 @@
+page-register {
+  #regis{
+    
+    background-color: #42afda;
+    
+  .button{
+    
+    background: #005b7c;
+    width: 80%;
+    border-radius: 5px;
+    margin-left: 9%;
+    margin-top: 0px;
+}
+
+
+h1{
+    margin-top:10px;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center
+ }
+    
+}
+
+
+.label{
+    color: rgb(158, 158, 158);
+}
+
+
+
+.list{
+    margin-top:12%;
+}
+
+.item{
+    margin-bottom:15px;
+    background: rgb(255, 255, 255);
+    border:medium none;   
+    border-radius: 5px;
+    width: 80%;
+    margin-left: 9%;
+    
+
+
+
+}
+    
+    
+    .error {
+        color: rgb(212, 44, 22);
+        font-size: 13px;
+        margin-left: 45px;
+        margin-top: -3%;
+      }
+    
+      .error1 {
+        color: rgb(75, 75, 75);
+        border-bottom: 1px solid #ff0000;
+        top: 10%;
+      }
+    
+    .submit{
+        margin-top: -12%;
+    }
+}

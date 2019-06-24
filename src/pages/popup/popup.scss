@@ -1,0 +1,25 @@
+page-popup { 
+  .sample-modal-page {
+    position: absolute;
+    overflow: hidden;
+    //max-width: 280px;
+    border-radius: 7px;
+    
+    height: 75%;
+    width: 80%;
+    bottom: 0;
+    //left: 10%;
+    right: 0;
+    margin: auto;
+    border: 0;
+    box-shadow: 0 16px 20px rgba(0,0,0,.4);
+    background-color: #dbdbdbf8;
+        
+    }
+    
+    .item{
+        background-color: transparent;
+        left: -10px;
+    
+    }
+}

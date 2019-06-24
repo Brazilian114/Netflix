@@ -4,7 +4,7 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
-
+$text-input-md-highlight-color: #00000000;
 
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
@@ -34,11 +34,20 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  rgba(0, 62, 124, 0.86),
-  danger:     rgb(255, 255, 255),
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    #453D4A,
+  nocolor:    rgba(69, 61, 74, 0),
+
+  yellow:    #ffe819,
+  yellow2:    rgb(247, 247, 247),
+  //carcare  :#85eafc,
+  //carcare:    #1d89c4,
+  carcare:    #42afda,
+  //carcare:    #42a5f6,
+  save:rgb(39, 116, 39),
+  secondary:   #005b7c,
+  danger:     rgb(167, 40, 40),
+  light:      #818181,
+  dark:       rgb(219, 219, 219)
 );
 
 
@@ -89,10 +98,24 @@ $colors: (
 @import "noto-sans";
 
 @font-face{
-  font-family:"test";
-  src: url('../assets/fonts/test7.woff2');
+ 
+  font-family:"test2";
+  src: url('../assets/fonts/Athiti/Athiti-Medium.ttf');
+  
+
 }
-$font-family-base:"test";
-h1{
-  font-family: "test";
+@font-face{
+
+  font-family:"test3";
+  src: url('../assets/fonts/Sriracha-Regular.ttf');
+ 
+  
+
 }
+
+
+
+$font-family-base:"test2";
+
+
+

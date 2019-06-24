@@ -1,54 +1,75 @@
 page-home {
     
-#home{
-    text-align:center;
-    background-image: url('../assets/img/bg.jpg') ;
+    #home{
+        text-align:center;
+        //background-color: #42a5f6;
+        background-color: #42afda;
     
-
-   h1{
-    margin-top:70px;
-    font-size: 45px;
-    color: rgb(255, 255, 255);
- }
-
-ion-list{
-    margin-top:60px;
-}
-
-    .button{
-        margin-top:30px;  
+       h1{
+        margin-top:70px;
+        font-size: 50px;
         color: rgb(255, 255, 255);
-        background: rgba(0, 62, 124, 0.86);
-        border-radius: 5px;
-        width:90%;
-        margin-left: 4%;
-    }
-
-    .item{
-        margin-bottom:10px;
-        background: rgb(255, 255, 255);
-        border:medium none; 
-        border-radius: 5px;
-        width:90%;
-        margin-left: 4%;
+        font-family: 'test3';
+     }
+    
+    ion-list{
+        margin-top:80px;
         
     }
-    a{
-        color: rgb(255, 255, 255);
-        margin-right:5px;
-        font-size: 20px;
-        margin-top: 10px;
-
-    }
-    .list{
-u{
-    color: rgba(0, 62, 124, 0.86);
+    //#185281;
+        .button{
+            top:-3px;  
+            color: rgb(255, 255, 255);
+            background: #005b7c;
+            border-radius: 5px;
+            width:90%;
+            margin-left: 4%;
+            
+        }
     
-}
-
-
+        .item{
+            margin-bottom:px;
+            background: rgb(255, 255, 255);
+            border:medium none; 
+            border-radius: 0px;
+            width:90%;
+            margin-left: 4%;
+            
+            //background-color: transparent;
+            
+            
+        }
+        a{
+            color: rgb(255, 255, 255);
+            margin-right:5px;
+            font-size: 18px;
+            margin-top: 50px;
+            
+    
+        }
+        .regis{
+            margin-top: 59%;
+        }
+    u{
+        color: rgb(255, 255, 255);
+        
+        
     }
-}
-
-
-}
+    /*
+    .text-input::-moz-placeholder {
+        color: white;
+      }
+      
+      .text-input:-ms-input-placeholder {
+        color: white;
+      }
+      
+      .text-input::-webkit-input-placeholder {
+        text-indent: 0;
+        color: white;
+      }
+        */
+    }
+   
+    
+    }

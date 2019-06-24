@@ -1,0 +1,52 @@
+
+
+  <ion-content padding class="sample-modal-page">
+    <h1>คิวของคุณ</h1>
+      <br>
+      
+      <ion-list no-lines>
+            
+        <ion-item>
+           เลขทะเบียนรถ
+           <ion-note color="light" item-end>
+           {{manual.license}}
+           </ion-note>
+         </ion-item>
+         
+         <ion-item>
+           รูปแบบการบริการ
+           <ion-note color="light" item-end>
+           {{manual.service_name}} 
+           </ion-note>
+         </ion-item>
+
+         <ion-item>
+          ช่วงเวลาที่จอง
+          <ion-note color="light" item-end>
+          {{manual.time}} น.
+          </ion-note>
+        </ion-item>
+
+         <ion-item>
+           ค่าใช้จ่าย
+           <ion-note color="light" item-end>
+           {{manual.service_price}} บาท
+           </ion-note>
+         </ion-item>
+
+         <ion-item>
+          สถานะ
+          <ion-note color="light" item-end>
+          {{manual.status_name}} 
+          </ion-note>
+        </ion-item>
+      
+     </ion-list>
+     
+    
+          
+   
+  <button ion-button block color="carcare" (click)="dismiss()">ปิด</button>
+  
+  
+  </ion-content>

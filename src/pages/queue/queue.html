@@ -1,0 +1,133 @@
+<ion-header>
+
+  <ion-navbar color="carcare">
+    <ion-title><h3>จองคิว</h3></ion-title>
+
+   
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+ 
+    
+<ion-content padding id="content">
+
+  
+  
+    <ion-list no-lines>
+       
+
+    <ion-item>
+          <ion-label> <ion-icon name="person"></ion-icon></ion-label>
+        <ion-input 
+                    disabled="true"
+                    value="{{userDetails.username}}"
+                    placeholder="ชื่อ-นามสกุล"
+                    type="text"></ion-input>
+   </ion-item>
+      <ion-item>
+          <ion-label> <ion-icon name="card"></ion-icon></ion-label>
+        <ion-input 
+                   disabled="true"
+                   value="{{userDetails.license}}"
+                   placeholder="หมายเลขทะเบียนรถ"></ion-input>
+      </ion-item>
+      
+      <div class="row2">
+        <ion-item>
+          <ion-label> จังหวัดตามทะเบียน </ion-label>
+        <ion-input 
+                   disabled="true"
+                   text-right
+                   value="{{userDetails.province_name}}"
+                   placeholder="จังหวัดตามทะเบียน"></ion-input>
+      </ion-item>
+    </div>
+      <ion-item>
+
+          <ion-label> <ion-icon name="call"></ion-icon></ion-label>
+        <ion-input 
+                   value="{{userDetails.tel}}"
+                   disabled="true"
+                   placeholder="เบอร์โทร"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label>รูปแบบการบริการ</ion-label>
+        <ion-select 
+                    submitText="Okay" cancelText="Cancle" 
+                    [(ngModel)]="userPostData.service_name">
+
+                   <ion-option *ngFor="let item of dataSet" [value]="item.booking_service_id">{{item.service_name}} (ราคา {{item.service_price}})</ion-option>
+                   
+
+        </ion-select>
+      </ion-item>
+      
+
+      <ion-item >
+        <ion-label>ช่วงเวลา</ion-label>
+        <ion-select  submitText="Okay" cancelText="Cancle"
+                    [(ngModel)]="userPostData.time">
+
+                    <ion-option>10.00</ion-option>
+                    <ion-option>11.00</ion-option>
+                    <ion-option>12.00</ion-option>
+                    <ion-option>13.00</ion-option>
+                    <ion-option>14.00</ion-option>
+                    <ion-option>15.00</ion-option>
+                    <ion-option>16.00</ion-option>
+                    <ion-option>17.00</ion-option>
+                    <ion-option>18.00</ion-option>
+                    <ion-option>19.00</ion-option>
+                    
+
+        </ion-select>
+      </ion-item>
+
+    
+        <ion-input padding id="home"
+               [(ngModel)]="userPostData.status_id"
+               
+               value="1" >
+      </ion-input>
+    
+      <ion-input padding id="home"
+               [(ngModel)]="userPostData.user_type"
+               
+               value="2" >
+      </ion-input>
+      
+       
+     
+      <ion-input 
+                   padding id="home"
+                   value="{{userDetails.username}}"
+                   [(ngModel)]="userPostData.username">
+      </ion-input>
+
+       <ion-input 
+                   padding id="home"
+                  value="{{userDetails.license}}"
+                  [(ngModel)]="userPostData.license">
+       </ion-input>
+       <ion-input 
+                   padding id="home"
+                  value="{{userDetails.province}}"
+                  [(ngModel)]="userPostData.province">
+      </ion-input>
+
+       <ion-input 
+                   padding id="home"
+                  value="{{userDetails.tel}}"
+                  [(ngModel)]="userPostData.tel">
+      </ion-input>
+                  
+    </ion-list>        
+
+<button ion-button full color="carcare" (click)="queueUpdate()">ยืนยัน</button>
+
+  </ion-content>

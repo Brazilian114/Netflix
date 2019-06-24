@@ -1,0 +1,71 @@
+<ion-navbar class="modal-wrapper" *navbar>
+
+    <ion-title>คิวของท่าน</ion-title>
+  </ion-navbar>
+  <ion-content padding class="sample-modal-page">
+
+    
+      <h1 text-center>คิวของท่าน</h1>
+      <br>
+      <ion-list no-lines>
+            
+         <ion-item>
+            เลขทะเบียน
+            <ion-note color="light" item-end>
+            {{userDetails.license}}
+            </ion-note>
+          </ion-item>
+          
+         <ion-item>
+            เวลาที่จอง
+            <ion-note color="light" item-end>
+            {{userDetails.time}} น.
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            รูปแบบการบริการ
+            <ion-note color="light" item-end>
+            {{userDetails.service_name}} 
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            ราคา
+            <ion-note color="light" item-end>
+            {{userDetails.service_price}} บาท
+            </ion-note>
+          </ion-item>
+   
+            <ion-row>
+              <ion-col>
+                
+                <ion-icon name="calendar"item-start ></ion-icon>
+                {{ this.converTime(userDetails.created) |  amLocal | amDateFormat: 'DD-MM-YYYY'}}
+              
+              </ion-col>
+              
+              <ion-col>
+                  
+                 <ion-icon name="time"item-start ></ion-icon>
+                  {{ this.converTime(userDetails.created) |  amLocal | amDateFormat: 'HH:mm:ss'}}
+                  
+              </ion-col>
+              
+            </ion-row>
+          
+          
+
+        
+         
+      
+         
+      </ion-list>
+
+     
+
+       
+
+
+      <button ion-button block color="carcare" (click)="dismiss()">ยืนยัน</button>
+  </ion-content>

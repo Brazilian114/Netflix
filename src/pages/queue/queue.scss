@@ -1,0 +1,40 @@
+page-queue {
+    #home{
+    
+        display: none
+    }
+    #content{
+        height: 100%;
+        background-color:rgb(241, 240, 240);
+        //background-color:rgb(237, 241, 243);
+            .item{
+                margin-bottom:23px;
+                border-radius: 5px;
+                margin-left: 50%; 
+                position: relative;
+                transform: translate(-50%,-50%);
+                padding: 5px;
+               // background-color: transparent;
+                width:96%
+              
+            }
+            .icon{
+                size: 10px;
+            }
+            ion-list{
+              margin-top: 15%;
+            }
+.button{
+    width:110%;
+    left: -16px;
+    height: 55px;
+    top:-9px;
+}
+
+
+}
+.row2{
+    margin-top: -5%;
+}
+
+}

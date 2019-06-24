@@ -1,0 +1,52 @@
+{
+    "login":{
+        "email"    : "Email",
+        "password" : "Password",
+        "login"    : "Log in",
+        "regis"    : "Don't have an account?",
+        "regis2"   : "Sign Up"
+    },
+    
+    "register":{
+        "fullname"  : "Fullname",
+        "email"     : "Email",
+        "phone"     : "Mobile Number",
+        "license"   : "License plate",
+        "province"  : "Province by license",
+        "password"  : "Password",
+        "submit"    : "Sign Up",
+        "back"      : "Back to login"
+
+    },
+    "main":{
+        "queue"     : "Booking Queue",
+        "profile"   : "Profile",
+        "history"   : "History",
+        "cancle"    : "My Queue"
+    },
+   
+    "queue":{
+        "booking"   : "Booking Queue",
+        "fullname"  : "Fullname",
+        "license"   : "License plate",
+        "province"  : "Province by license",
+        "phone"     : "Mobile Number",
+        "service"   : "Select Service",
+        "time"      : "Select Time",
+        "ok"        : "OK"
+        
+
+    },
+   
+    "profile":{
+        "profile"   : "Profile",
+        "email"     : "Email",
+        "fullname"  : "Fullname",
+        "license"   : "License plate",
+        "province"  : "Province by license",
+        "phone"     : "Mobile Number",
+        "ok"        : "Save"
+        
+
+    }
+}
