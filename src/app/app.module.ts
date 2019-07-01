@@ -8,16 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 
-import { QueuePage } from '../pages/queue/queue';
-import { MainPage } from '../pages/main/main';
-//import { ProfilePage } from '../pages/profile/profile';
-import { HistoryPage } from '../pages/history/history';
-import { RegisterPage } from '../pages/register/register';
-import { CanclePage } from '../pages/cancle/cancle';
-import { PopupPage } from '../pages/popup/popup';
-import { ManualPage } from '../pages/manual/manual';
-//import { ContentPage } from '../pages/content/content';
-//import { Popup2Page } from '../pages/popup2/popup2';
+
 import { MomentModule } from 'angular2-moment';
 import { Http } from '@angular/http';
 import { LoginProvider } from '../providers/login/login';
@@ -33,17 +24,7 @@ import { IonicStorageModule } from '@ionic/storage';
   declarations: [
     
     MyApp,
-    HomePage,
-    MainPage,
-    RegisterPage,
-    QueuePage,
-    HistoryPage,
-    CanclePage,
-    PopupPage,
-    //Popup2Page
-    //ProfilePage,
-    ManualPage,
-    //ContentPage
+    HomePage
     
     
     
@@ -63,17 +44,7 @@ import { IonicStorageModule } from '@ionic/storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    MainPage,
-    RegisterPage,
-    QueuePage,
-    HistoryPage,
-    CanclePage,
-    PopupPage,
-    //Popup2Page
-    //ProfilePage,
-    ManualPage,
-    //ContentPage
+    HomePage
     
     
   ],

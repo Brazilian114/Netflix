@@ -1,75 +1,196 @@
-page-home {
+.logo{
+    height: 60px;
     
-    #home{
-        text-align:center;
-        //background-color: #42a5f6;
-        background-color: #42afda;
+}
+.back{
+    background: rgb(24, 23, 23);
+}
+ion-slides{
+height: 30%;
+//transform: translate(-50%,50%);
+margin-top: -1%;
+
+}
+
+.item{
+    background-color: transparent;
+    margin-top: 1%;
+    width: auto;
+}
+button{
+    background-color: transparent;
     
-       h1{
-        margin-top:70px;
-        font-size: 50px;
-        color: rgb(255, 255, 255);
-        font-family: 'test3';
-     }
+}
+ion-icon {
+    font-size: 38px; //Preferred size here
+    margin-top: -1%;
+}
+h1{
+    margin-top: -30%;
+    transform: translate(-50%,50%)center;
+}
+ h3 , h2 , h4 , h5{
+
+    color: rgb(255, 255, 255);
+}
+h4{
+    margin-left: 35px;
+    color: rgb(219, 219, 219);
+    margin-top: 5px;
+}
+.slides{
     
-    ion-list{
-        margin-top:80px;
-        
-    }
-    //#185281;
-        .button{
-            top:-3px;  
-            color: rgb(255, 255, 255);
-            background: #005b7c;
-            border-radius: 5px;
-            width:90%;
-            margin-left: 4%;
-            
-        }
+    background-size: cover;
     
-        .item{
-            margin-bottom:px;
-            background: rgb(255, 255, 255);
-            border:medium none; 
-            border-radius: 0px;
-            width:90%;
-            margin-left: 4%;
-            
-            //background-color: transparent;
-            
-            
-        }
-        a{
-            color: rgb(255, 255, 255);
-            margin-right:5px;
-            font-size: 18px;
-            margin-top: 50px;
-            
-    
-        }
-        .regis{
-            margin-top: 59%;
-        }
-    u{
-        color: rgb(255, 255, 255);
-        
-        
-    }
-    /*
-    .text-input::-moz-placeholder {
-        color: white;
-      }
-      
-      .text-input:-ms-input-placeholder {
-        color: white;
-      }
-      
-      .text-input::-webkit-input-placeholder {
-        text-indent: 0;
-        color: white;
-      }
-        */
-    }
    
+}
+.poster1_card{
+    width: 75%;
+    height: 153px;
+    transform: translate(-50%);
+    margin-left: 45%;
     
-    }
+}
+.poster3_card{
+    width: 85%;
+    height: 116px;
+    transform: translate(-50%);
+    margin-left: 45%;
+    border-radius: 50%;   
+    border: 2px solid rgb(194, 194, 194);
+}
+.poster2_card{
+    width: 200%;
+    height: 170px;
+    margin-top: -30%;
+    margin-left: 80%;
+    background-color: transparent;
+    transform: translate(-50%);
+    
+}
+.cat1_card{
+    background:url('/assets/netflix/IMG_0813.JPG');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#ffff;  
+    border-radius: 2%;
+    transform: translate(-50%);
+    
+}
+/*
+.cat2_card{
+    background: linear-gradient(rgba(229, 9, 20, 0.568),rgba(229, 9, 20, 0.192)), url('/assets/netflix/toy4.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#ffff;  
+    border-radius: 2%;
+    transform: translate(-50%,50%);
+}
+*/
+.flash_card{
+    background: url('/assets/netflix/thing2.jpeg')center;
+    //background-size: cover;
+    background-size: 100%;
+    
+    
+}
+.arrow_card{
+    background: url('/assets/netflix/black.jpg')center;
+    background-size: 100%;
+    //transform: translate(-50%);
+    
+
+}
+.super_card{
+    background: url('/assets/netflix/money.jpg')center;
+    background-size: 105%;
+    
+}
+
+.orange_is_the_new_black_card{
+    background: url('/assets/netflix/ozark.jpg')center;
+    background-size: 100%;
+    
+}
+
+.net_card{
+    background: url('/assets/netflix/rain.jpg')center;
+    background-size: 100%;
+    
+}
+
+.flix_card{
+    background: url('/assets/netflix/witcher.jpg')center;
+    background-size: cover;
+    
+}
+
+
+
+
+.toy4_card{
+    background: url('/assets/netflix/toy4.jpg')center;
+    background-size: 100%;
+    
+}
+.anabel_card{
+    background: url('/assets/netflix/anabell.jpg')center;
+    background-size: 100%;
+
+}
+.john_card{
+    background: url('/assets/netflix/john.jpg')center;
+    background-size: 100%;
+}
+
+.mib_card{
+    background: url('/assets/netflix/mib.jpg')center;
+    background-size: 100%;
+}
+
+.aradin_card{
+    background: url('/assets/netflix/aradin.jpg')center;
+    background-size: 100%;
+}
+
+.bohi_card{
+    background: url('/assets/netflix/bohi.jpg')center;
+    background-size: 100%;
+}
+
+
+
+
+.spider_card{
+    background: url('/assets/netflix/spider.jpg')center;
+    background-size: 100%;
+    
+}
+.fast_card{
+    background: url('/assets/netflix/fast.jpg')center;
+    background-size: cover;
+
+}
+.endgame_card{
+    background: url('/assets/netflix/andgame.jpg')center;
+    background-size: 100%;
+}
+
+.first_card{
+    background: url('/assets/netflix/first.jpg')center;
+    background-size: 100%;
+}
+
+.moon_card{
+    background: url('/assets/netflix/moon.jpeg')center;
+    background-size: 100%;
+}
+
+.venom_card{
+    background: url('/assets/netflix/venom.jpg')center;
+    background-size: 100%;
+}

@@ -1,8 +1,7 @@
 import { Component,ViewChild} from '@angular/core';
 import { NavController,ToastController,AlertController,ViewController,LoadingController} from 'ionic-angular';
 
-import { RegisterPage } from '../register/register';
-import { MainPage } from '../main/main';
+
 
 import { LoginProvider } from '../../providers/login/login';
 import { Storage } from '@ionic/storage';
@@ -21,7 +20,9 @@ import { Http } from '@angular/http';
 })
 export class HomePage { 
 
-
+slidesOptions = {
+  slidesPerView: 3,
+}
   
   resposeData : any;
   userData = {"username":"","password":""};
@@ -50,7 +51,7 @@ export class HomePage {
           
           if(this.resposeData.userData){
             localStorage.setItem('userData',JSON.stringify(this.resposeData))
-            this.navCtrl.push(MainPage);
+            
 
             const loader = this.loading.create({
               content: "Please wait...",
@@ -80,16 +81,8 @@ export class HomePage {
         }
 
 
-  click(){
-     this.navCtrl.push(RegisterPage);
 
 
-  }
-  main(){
-    this.navCtrl.setRoot(MainPage);
-
-
- }
 
 }
 

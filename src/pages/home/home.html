@@ -1,50 +1,144 @@
-<ion-header>
-  
+<ion-header no-border>
+  <ion-toolbar color="back">
+    
+      <ion-grid style="margin-top:0px;">
+        <ion-row>
+       <img src="./assets/netflix/logo2.png" class="logo" style="width: 18px;height: 35px;margin-left: 10px;" start>
+      
+       
+        
+<h4>TV Shows</h4>
+<h4>Movies</h4>
+
+<h4>My List</h4>
+      </ion-row>
+    </ion-grid>
+    <!----
+    <ion-buttons end>
+      <button>
+         <ion-icon color="light" name="search" ></ion-icon>
+      </button>
+    </ion-buttons>
+   -->
+       
+
+    
+  </ion-toolbar>
+
+
 </ion-header>
 
-<ion-content  padding id="home">
-    <b><h1>
-        Carcare
-    </h1></b>
-    <ion-list >
-        
-          <ion-item no-lines>
-           
-            <ion-input  placeholder="อีเมล์" type="text" name="username" [(ngModel)]="userData.username"></ion-input>
-          </ion-item>
-        
-          <ion-item>
-            
-            <ion-input   placeholder="รหัสผ่าน "type="password" name="password"[(ngModel)]="userData.password"></ion-input>
-          </ion-item>
-        
-         
-        </ion-list>
-        
-        
-        <button ion-button block (click)="loginn('top')">เข้าสู่ระบบ</button>
-        <div class="regis">
-        <a>ยังไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
-      </div>
-    <!--  <ion-list >
-          
-          <ion-item  >
-              <ion-input  round type="text" placeholder="Username" name="username" #username></ion-input>
-            </ion-item>
-          
-            <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" #password></ion-input>
-            </ion-item>
-          
-            
-  
-          </ion-list>
-          
-          
-          <button ion-button block (click)="sign()">เข้าสุ่ระบบ</button>
-          <a>ไม่มีบัญชีผู้ใช้งาน?<u (click)="click()">ลงทะเบียน</u></a>
-     
-        
-        --> 
-  
+<ion-content class="back">
+
+  <ion-item no-lines>
+    <h2>Previews</h2>
+  </ion-item>
+
+   
+      <ion-slides fixed slidesPerView="3" spaceBetween="-15" style="margin-top: -8%;">
+        <ion-slide>
+          <ion-card class="moon_card poster3_card"></ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="flix_card poster3_card"></ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="flash_card poster3_card"></ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="aradin_card poster3_card"></ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="first_card poster3_card"></ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="venom_card poster3_card"></ion-card>
+        </ion-slide>
+      </ion-slides>
+    
+    
+
+   <ion-item no-lines style="margin-top: -2%;">
+    <h2>NETFLIX ORIGINAL</h2>
+   
+   </ion-item>
+
+   <ion-slides fixed slidesPerView="3" spaceBetween="-25" style="height:29%;">
+    <ion-slide>
+      <ion-card class="flash_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="arrow_card poster1_card"></ion-card>
+    </ion-slide>
+     <ion-slide>
+      <ion-card class="super_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="orange_is_the_new_black_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="net_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="flix_card poster1_card"></ion-card>
+    </ion-slide>
+   </ion-slides>
+
+
+   <ion-item no-lines>
+    <h2>Trending Now</h2> 
+    
+   </ion-item>
+
+   <ion-slides slidesPerView="3" spaceBetween="-25" style="height:29%;">
+    <ion-slide>
+      <ion-card class="toy4_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="anabel_card poster1_card"></ion-card>
+    </ion-slide>
+     <ion-slide>
+      <ion-card class="john_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="mib_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="aradin_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="bohi_card poster1_card"></ion-card>
+    </ion-slide>
+   </ion-slides>
+
+   <ion-item no-lines>
+    <h2>Hollywood movies</h2>
+   
+   </ion-item>
+
+   <ion-slides slidesPerView="3" spaceBetween="-25" style="height:29%;">
+    <ion-slide>
+      <ion-card class="spider_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="fast_card poster1_card"></ion-card>
+    </ion-slide>
+     <ion-slide>
+      <ion-card class="endgame_card poster1_card"></ion-card>
+    </ion-slide>
+     <ion-slide>
+      <ion-card class="first_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="moon_card poster1_card"></ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="venom_card poster1_card"></ion-card>
+    </ion-slide>
+   </ion-slides>
+
+   <ion-item no-lines>
+
+   </ion-item>
+
 </ion-content>
